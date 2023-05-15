@@ -9,6 +9,9 @@ public class BasePage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-
+    //@FindBy(xpath = "//span[.='Broadcasts']")
+    //
+    //
+    // public WebElement broadcastModule;
 
 }

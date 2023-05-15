@@ -1,14 +1,17 @@
 
   Feature: Log In functionality
 
-
-    Scenario: Login
+    Background: Login
       When Agent navigate to LogIn page
-      And Agent signed in as an "Admin" user
-      Then Agent should see the homepage
 
 
-    Scenario: Login
-      When Agent navigate to LogIn page
-      And Agent signed in as an "Staff" user
-      Then Agent should see the homepage
+    @admin
+    Scenario: Login as Admin
+      When Agent signed in as an "Admin" user
+      And Agent should see the homepage
+
+
+    @staff
+    Scenario: Login as Staff
+      When Agent signed in as an "Staff" user
+      And Agent should see the homepage

@@ -11,8 +11,8 @@ import java.util.concurrent.TimeUnit;
 
 public class Hooks {
 
-//    hook before = @BeforeMethod in TestNG
-//    hook after = @AfterMethod in TestNG
+//    hook before = @BeforeMethod
+//    hook after = @AfterMethod
 //    it's not a good idea to mix implicit and explicit waits. It can lead to unexpectedly long waits.
 //    usually, we just use explicit and fluent waits.
 

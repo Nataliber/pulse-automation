@@ -32,7 +32,7 @@ public class Driver {
          We read our browserType from data.properties.
          This way, we can control which browser is opened from outside our code, from configuration.properties.
           */
-            String browserType = DataReader.getProperty("browser");
+            String browserType = io.prompt.utilities.DataReader.getProperty("browser");
 
 
          /*

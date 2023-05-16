@@ -75,7 +75,7 @@
     <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
         <artifactId>selenium-java</artifactId>
-        <version>4.9.0</version>
+        <version>3.141.59</version>
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
@@ -118,12 +118,7 @@
         </dependency>
 
 
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-junit</artifactId>
-            <version>7.12.0</version>
-            <scope>compile</scope>
-        </dependency>
+
 
         <!-- https://mvnrepository.com/artifact/me.jvt.cucumber/reporting-plugin -->
         <dependency>

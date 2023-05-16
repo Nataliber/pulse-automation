@@ -17,7 +17,7 @@ public class BroadcastPage {
     @FindBy(xpath = "//span[.='Create Broadcast']/..")
     public WebElement createBroadcastButton;
 
-    @FindBy(xpath = "//td[.='My list']")
+    @FindBy(xpath = "(//span[@class='ant-checkbox'])[3]")
     public WebElement myList;
 
     @FindBy(xpath = "//span[.='Continue to Channels']")

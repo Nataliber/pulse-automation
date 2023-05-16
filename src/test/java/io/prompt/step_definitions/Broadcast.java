@@ -20,21 +20,24 @@ public class Broadcast {
 
     @When("Agent click {string} button")
     public void agent_click_button(String string) {
+
+        browserUtils.clickWithJS(broadcastPage.createBroadcastButton);
        // broadcastPage.createBroadcastButton.click();
-       // browserUtils.sleep(2);
+        browserUtils.sleep(2);
         //browserUtils.findElementThatContainsText("button", string).click();
 
     }
 
     @When("Agent select contact list on Audience page")
     public void agent_select_contact_list_on_audience_page() {
-       //broadcastPage.myList.click();
+        browserUtils.clickWithJS(broadcastPage.myList);
+      // broadcastPage.myList.click();
 
     }
 
     @When("Agent select channel on Channels page")
     public void agent_select_channel_on_channels_page() {
-       // broadcastPage.continueToChannelsButton.click();
+        broadcastPage.continueToChannelsButton.click();
     }
 
     @When("Agent select Delivery Type {string} and Delivery Timing {string} on Delivery Options page")

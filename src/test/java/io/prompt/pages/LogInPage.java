@@ -35,6 +35,7 @@ public class LogInPage {
     }
 
 
+
     public void loginWithConfigUser(String user) {
         String userName = "", password = "";
         switch (user.toLowerCase()) {
@@ -52,7 +53,7 @@ public class LogInPage {
         inputPassword.sendKeys(password);
         loginButton.click();
         browserUtils.sleep(1);
-        //browserUtils.time(2000);
+
         //Driver.getDriver().manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
 

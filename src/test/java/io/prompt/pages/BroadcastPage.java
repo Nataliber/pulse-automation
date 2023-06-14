@@ -17,13 +17,13 @@ public class BroadcastPage {
     @FindBy(xpath = "//span[.='Create Broadcast']/..")
     public WebElement createBroadcastButton;
 
-    @FindBy(xpath = "(//span[@class='ant-checkbox'])[5]")
+    @FindBy(xpath = "(//span[@class='ant-checkbox'])[3]")
     public WebElement myList;
 
     @FindBy(xpath = "//span[.='Continue to Channels']")
     public WebElement continueToChannelsButton;
 
-    @FindBy(xpath = "(//span[@class='ant-checkbox'])[6]")
+    @FindBy(xpath = "(//span[@class='ant-checkbox'])[4]")
     public WebElement twilioPhoneNumber;
 
     @FindBy(xpath = "//button[.='Continue to Delivery']")
@@ -37,7 +37,7 @@ public class BroadcastPage {
 
     @FindBy(xpath = "//span[@class ='anticon anticon-play-square']")
     public WebElement selectMedia;
-    @FindBy(xpath = "(//button[@class ='ant-btn ant-btn-primary StyledAntButton--yu9zik evtayf'])[3]")
+    @FindBy(xpath = "(//button[@class ='ant-btn ant-btn-primary StyledAntButton--yu9zik evtayf'])[2]")
     public WebElement selectVideo;
 
     @FindBy(xpath = "//button[.='Add to Queue']")
@@ -56,7 +56,10 @@ public class BroadcastPage {
     @FindBy(xpath = "//button[.='View Broadcast Metrics']")
     public WebElement goToActiveConversationsButton;
 
-    @FindBy(xpath = "//div[@class ='BaseText--9eaeti-div Div--ktmud0 StatusWrapper--1qpbx2a gfOOGn iaWrMG']")
+    @FindBy(xpath = "(//div[@class='BaseText--9eaeti-div Div--ktmud0 StatusWrapper--2xiy76 gfOOGn kWqVsY'])[1]")
     public WebElement broadcastStatus;
+    //@FindBy(xpath = "(//div/div[. =' Sends Complete'])[1]")
+   // public WebElement broadcastStatus;
+
 
 }

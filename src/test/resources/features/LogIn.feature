@@ -1,11 +1,11 @@
-
+@login
   Feature: Log In functionality
 
     Background: Login
       When Agent navigate to LogIn page
 
 
-    @admin
+   @admin
     Scenario: Login as Admin
       When Agent signed in as an "Admin" user
       And Agent should see the homepage

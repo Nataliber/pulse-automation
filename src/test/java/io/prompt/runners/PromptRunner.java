@@ -23,7 +23,7 @@ import org.junit.runner.RunWith;
         glue = "io/prompt/step_definitions", // glue : where we pass step_definitions path
         dryRun = false,  //turn on and off our step_definition implementations running
                         // or not so we can easily generate snippet.
-        tags = "",  //"@smoke and @login" NOT WORKING
+        tags = "@A2PBroadcastImmediate",  //"@smoke and @login" NOT WORKING
         // "@broadcast or @admin" //  "@smoke not @login"
         publish = false
 )

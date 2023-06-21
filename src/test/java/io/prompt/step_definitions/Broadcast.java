@@ -9,6 +9,7 @@ import io.prompt.utilities.BrowserUtils;
 import io.prompt.utilities.Driver;
 import org.junit.Assert;
 
+import javax.swing.text.View;
 import java.util.concurrent.TimeUnit;
 
 public class Broadcast {
@@ -19,7 +20,7 @@ public class Broadcast {
 
     @Given("Agent navigate to {string} module")
     public void agent_navigate_to_module(String string) {
-        broadcastPage.broadcastModule.click();
+        basePage.broadcastModule.click();
         browserUtils.sleep(2);
     }
     @When("Agent click Create Broadcast button")
@@ -31,8 +32,7 @@ public class Broadcast {
     }
     @When("Agent select contact list on Audience page")
     public void agent_select_contact_list_on_audience_page() {
-        //  browserUtils.clickWithJS(broadcastPage.myList);
-        broadcastPage.myList.click();
+       broadcastPage.myList.click();
     }
     @When("Agent click Continue to Channels button")
     public void agent_click_continue_to_channels_button() {
@@ -49,8 +49,8 @@ public class Broadcast {
         browserUtils.sleep(1);
     }
     @When("Agent select Delivery Type {string} and Delivery Timing {string} on Delivery Options page")
-    public void agent_select_delivery_type_and_delivery_timing_on_delivery_options_page(String string, String string2) {
-
+    public void agent_select_delivery_type_and_delivery_timing_on_delivery_options_page(String type, String delivery) {
+    broadcastPage.deliveryOptions(type,delivery);
     }
     @When("Agent click Continue to Compose button")
     public void agent_click_continue_to_compose_button() {
@@ -65,48 +65,80 @@ public class Broadcast {
         browserUtils.sleep(1);
         broadcastPage.selectVideo.click();
         browserUtils.sleep(1);
+        broadcastPage.selectLink.click();
+        browserUtils.sleep(1);
+        broadcastPage.insertSmartLink.click();
+        browserUtils.sleep(1);
 
-    }
+            }
     @When("Agent click Continue to Review button")
     public void agent_click_continue_to_review_button() {
     broadcastPage.continueToReviewButton.click();
         browserUtils.sleep(1);
     }
+
+
     @When("Agent click Add to Queue button")
     public void agent_click_add_to_queue_button() {
         broadcastPage.addToQueueButton.click();
         browserUtils.sleep(1);
 
     }
+    @When("Agent click Confirm Broadcast button")
+    public void agent_click_confirm_broadcast_button() {
+        broadcastPage.confirmBroadcastButton.click();
+        browserUtils.sleep(1);
+
+
+    }
     @When("Agent click Go to Send Queue button")
     public void agent_click_go_to_send_queue_button() {
         broadcastPage.goToSendQueueButton.click();
         browserUtils.sleep(1);
+
     }
     @When("Agent click Send Message button")
     public void agent_click_send_message_button() {
         broadcastPage.sendMessageButton.click();
+        browserUtils.sleep(1);
+        broadcastPage.sendMessageButton.click();
         browserUtils.sleep(4);
+        Assert.assertEquals("Send Queue",broadcastPage.sendQueueTitle.getText());
     }
     @When("Agent click View Broadcast Metrics button")
     public void agent_click_view_broadcast_metrics_button() {
+       broadcastPage.viewBroadcastMetricsbutton.click();
+       browserUtils.sleep(2);
+    }
 
-
-     Assert.assertEquals("Send Queue",broadcastPage.sendQueueTitle.getText());
-       broadcastPage.goToActiveConversationsButton.click();
+    @Then("Agent click on last eclipse menu and resume delivery")
+    public void agent_click_on_last_eclipse_menu_and_resume_delivery() {
+        broadcastPage.eclipsesMenu.click();
         browserUtils.sleep(2);
+        broadcastPage.resumeDeliveryButton.click();
+        browserUtils.sleep(1);
     }
-    @Then("Verify Status in Broadcast History tab")
-    public void verify_status_in_broadcast_history_tab() {
-        basePage.broadcasts.click();
-        browserUtils.sleep(5);
-        System.out.println(broadcastPage.broadcastStatus.getText());
-        Assert.assertEquals("Delivery In Progress",broadcastPage.broadcastStatus.getText());
+    @Then("Agent click Resume Delivery confirm")
+    public void agent_click_resume_delivery_confirm() {
+        broadcastPage.resumeDeliveryConfirmButton.click();
+        browserUtils.sleep(3);
+    }
+    @Then("Verify Status {string} in Broadcast History tab")
+    public void verify_status_in_broadcast_history_tab(String string) {
+        browserUtils.sleep(2);
+        if(string.contains("Complete")){
+            browserUtils.sleep(33);
+        }
 
-        browserUtils.sleep(31);
-        //sleep=25 sec->failed, sleep=31 sec->pass,
-        System.out.println(broadcastPage.broadcastStatus.getText());
-        Assert.assertEquals("Sends Complete",broadcastPage.broadcastStatus.getText());
+        System.out.println(broadcastPage.deliveryStatus(string));
+        Assert.assertEquals(string, broadcastPage.deliveryStatus(string));
+
     }
+
+
+
+
+
+
 
 }

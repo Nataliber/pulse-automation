@@ -35,7 +35,7 @@ public class Hooks {
             scenario.attach(data, "image/png", scenario.getName());
         }
         Driver.closeDriver();
-        System.out.println("Automation complete:::(^_^)");
+        System.out.println(":::::::::(^_^):::::::::::::::");
     }
 }
 

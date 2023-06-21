@@ -16,7 +16,7 @@ public class BasePage {
     public WebElement queue;
 
     @FindBy(xpath = "//span[.='Broadcasts']")
-    public WebElement broadcasts;
+    public WebElement broadcastModule;
 
     Faker faker =new Faker();
     public String messagetext(){

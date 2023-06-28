@@ -7,9 +7,9 @@ Feature: Send Broadcast
     And Agent should see the homepage
 
 
- @P2PBroadcastImmediate
+ @p2pbroadcastimmediate
   Scenario: Agent create a P2P Broadcast with Immediate Delivery
-    Given Agent navigate to "Broadcasts" module
+    Given Agent navigate to "Broadcasts" page
     When Agent click Create Broadcast button
     And Agent select contact list on Audience page
     And Agent click Continue to Channels button
@@ -26,9 +26,9 @@ Feature: Send Broadcast
     Then Verify Status 'Delivery In Progress' in Broadcast History tab
    Then Verify Status 'Sends Complete' in Broadcast History tab
 
-  @A2PBroadcastImmediate
+  @a2pbroadcastimmediate
   Scenario: Agent create a A2P Broadcast with Immediate Delivery
-    Given Agent navigate to "Broadcasts" module
+    Given Agent navigate to "Broadcasts" page
     When Agent click Create Broadcast button
     And Agent select contact list on Audience page
     And Agent click Continue to Channels button
@@ -40,13 +40,13 @@ Feature: Send Broadcast
     And Agent click Continue to Review button
     And Agent click Confirm Broadcast button
     And Agent click View Broadcast Metrics button
-    Given Agent navigate to "Broadcasts" module
+    Given Agent navigate to "Broadcasts" page
     Then Verify Status 'Delivery In Progress' in Broadcast History tab
     Then Verify Status 'Sends Complete' in Broadcast History tab
 
-  @A2PBroadcastPaused
+  @a2pbroadcastPaused
   Scenario: Agent create a A2P Broadcast with Immediate Delivery
-    Given Agent navigate to "Broadcasts" module
+    Given Agent navigate to "Broadcasts" page
     When Agent click Create Broadcast button
     And Agent select contact list on Audience page
     And Agent click Continue to Channels button
@@ -58,7 +58,7 @@ Feature: Send Broadcast
     And Agent click Continue to Review button
     And Agent click Confirm Broadcast button
     And Agent click View Broadcast Metrics button
-    Given Agent navigate to "Broadcasts" module
+    Given Agent navigate to "Broadcasts" page
     Then Verify Status 'Delivery Paused' in Broadcast History tab
     And Agent click on last eclipse menu and resume delivery
     And Agent click Resume Delivery confirm

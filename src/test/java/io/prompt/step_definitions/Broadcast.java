@@ -18,8 +18,8 @@ public class Broadcast {
     BroadcastPage broadcastPage = new BroadcastPage();
     BasePage basePage = new BasePage();
 
-    @Given("Agent navigate to {string} module")
-    public void agent_navigate_to_module(String string) {
+    @Given("Agent navigate to {string} page")
+    public void agent_navigate_to_page(String string) {
         basePage.broadcastModule.click();
         browserUtils.sleep(2);
     }

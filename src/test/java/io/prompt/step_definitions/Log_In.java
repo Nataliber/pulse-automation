@@ -19,8 +19,8 @@ public class Log_In {
     @When("Agent signed in as an {string} user")
     public void agent_signed_in_as_an_user(String string) {
         logInPage.loginWithConfigUser(string);
-
     }
+
     @Then("Verify agent is on {string} home page")
     public void verify_agent_is_on_home_page(String role) {
         System.out.println("Agent navigated to URL: " + logInPage.urlHomePage(role));

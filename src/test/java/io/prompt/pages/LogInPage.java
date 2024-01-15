@@ -10,30 +10,38 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LogInPage {
     BrowserUtils browserUtils = new BrowserUtils();
-    public LogInPage(){
+
+    public LogInPage() {
         PageFactory.initElements(Driver.getDriver(), this);
 
     }
-
-    @FindBy(xpath = "//input[@autocomplete='username']")
+    @FindBy(css = "#email")
     public WebElement inputUserName;
-
-    @FindBy(xpath = "//input[@type='password']")
+    @FindBy(css = "#password")
     public WebElement inputPassword;
-
-    @FindBy(xpath = "//a[@data-qa='button-log-in']")
+    @FindBy(xpath = "//button[@type='submit']")
     public WebElement loginButton;
 
 
-
-
-    public String urlLogIn(){
-        return "https://"+ApplicationReader.getProperty("org").toLowerCase()+"."+(ApplicationReader.getProperty("env"))+".io/#login";
-    }
-    public String urlHome(){
-        return "https://"+ApplicationReader.getProperty("org").toLowerCase()+"."+(ApplicationReader.getProperty("env"))+".io/spark/#home";
+    public String urlLogIn() {
+        return "https://" + (ApplicationReader.getProperty("env")) + ".prompt.io";
     }
 
+    public String urlHomePage(String role) {
+        String result = "https://" + (ApplicationReader.getProperty("env"));
+        switch (role) {
+            case "Admin":
+                browserUtils.sleep(6);
+                result = result + ".prompt.io/kpi";
+                break;
+            case "Customer":
+                browserUtils.sleep(5);
+                result = result + ".prompt.io/accounts/";
+                break;
+        }
+        return result;
+
+    }
 
 
     public void loginWithConfigUser(String user) {
@@ -43,9 +51,9 @@ public class LogInPage {
                 userName = DataReader.getProperty("adminUserName");
                 password = DataReader.getProperty("adminPassword");
                 break;
-            case "staff":
-                userName = DataReader.getProperty("staffUserName");
-                password = DataReader.getProperty("staffPassword");
+            case "customer":
+                userName = DataReader.getProperty("customerUserName");
+                password = DataReader.getProperty("customerPassword");
                 break;
         }
 
